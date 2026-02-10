@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrangeiro ou não?</title>
+</head>
+<body>
+    <h1>Em qual país você mora?</h1>
+    Escreva o nome do país que você mora <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="estrangeiro">
+
+    </div>
+
+    <script>
+    function verificar() {
+        let txtpa = document.querySelector('#txtpais')
+        let estrangeiro = document.querySelector('#estrangeiro')
+        let pais = txtpa.value.toLowerCase()
+
+        if (pais !== 'brasil' && pais !== 'br') {
+            estrangeiro.innerHTML = `<p>Você mora no país <strong>${txtpa.value}</strong> então é estrangeiro</p>`
+        }
+
+        if (pais === 'brasil' || pais === 'br') {
+            estrangeiro.innerHTML = `<p>Você mora no país <strong>${txtpa.value}</strong> então é brasileiro</p>`
+        }
+    }
+</script>
+</body>
+</html>
