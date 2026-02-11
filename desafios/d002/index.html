@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Boas-vindas</title>
+    <style>
+        body {
+            font: normal 20pt arial;
+        }
+        #botao {
+            height: 150px;
+            width: 300px;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        #botao:hover {
+            background-color: grey;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Boas-vindas</h1>
+    <div id="botao">
+        <p>Inicie o desafio</p>
+    </div>
+
+    <script>
+        let bt = window.document.querySelector('#botao')
+        bt.addEventListener('click', clicar)
+
+        function clicar() {
+            let nome = window.prompt(`Qual é o seu nome?`)
+            let idade = window.prompt(`Olá, ${nome}! Quantos anos você tem?`)
+            window.alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade!`)
+        }
+    </script>
+</body>
+</html>
