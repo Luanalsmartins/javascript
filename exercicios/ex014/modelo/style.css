@@ -1,0 +1,28 @@
+:root {
+    --cor-padrão: rgb(185, 185, 223);
+    --cor-section: white;
+    --cor-manhã: rgb(228, 204, 100);
+    --cor-tarde: rgb(167, 127, 206);
+    --cor-noite: rgb(74, 74, 97);
+}
+body {
+    background: var(--cor-padrão);
+    font: normal 1.2em Arial;
+}
+header {
+    color: white;
+    text-align: center;
+}
+section {
+    background: var(--cor-section);
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.329);
+}
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
