@@ -1,9 +1,6 @@
 :root {
-    --cor-padrão: rgb(185, 185, 223);
+    --cor-padrão: rgb(118, 153, 218);
     --cor-section: white;
-    --cor-manhã: rgb(228, 204, 100);
-    --cor-tarde: rgb(167, 127, 206);
-    --cor-noite: rgb(74, 74, 97);
 }
 body {
     background: var(--cor-padrão);
