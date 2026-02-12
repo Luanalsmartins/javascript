@@ -18,6 +18,16 @@ section {
     margin: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.329);
 }
+#resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+img {
+    height: 200px;
+    width: 200px;
+}
 footer {
     color: white;
     text-align: center;

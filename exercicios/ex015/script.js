@@ -4,53 +4,28 @@ document.getElementById('formulario').addEventListener('submit', function(event)
 })
 
 function verificar() {
-    let data = document.querySelector('#nascimento').value
-    let resultado = document.querySelector('#resultado')
+    const data = document.querySelector('#nascimento').value
+    const resultado = document.querySelector('#resultado')
+    const fsex = document.querySelector('input[name="sexo"]:checked')
 
+    //validações iniciais
     if (!data) {
         alert('Preencha a data de nascimento')
         return
     }
-
-    let nascimento = new Date(data)
-    let hoje = new Date()
-
-    let ano = nascimento.getFullYear()
-    let anoAtual = hoje.getFullYear()
-
-    if (ano < 1900 || ano > anoAtual) {
-        window.alert('[ERRO] Verifique os dados e tente novamente!')
-    }
-
-    let fsex = document.querySelector('input[name="sexo"]:checked')
     if (!fsex) {
         alert('Selecione o sexo.')
         return
     }
-    
-    let gênero = '' 
-    if (fsex.value === 'Masculino') {
-        gênero = 'Homem'
-        if (idade >= 1 && idade < 12) {
-            // Criança
-        } else if (idade < 18) {
-            // Adolescente
-        } else if (idade < 60) {
-            // Adulto
-        } else {
-            // Idoso
-        }
-    } else if (fsex.value === 'Feminino') {
-        gênero = 'Mulher'
-        if (idade >= 1 && idade < 12) {
-            // Criança
-        } else if (idade < 18) {
-            // Adolescente
-        } else if (idade < 60) {
-            // Adulto
-        } else {
-            // Idoso
-        }
+
+    const nascimento = new Date(data)
+    const hoje = new Date()
+    const ano = nascimento.getFullYear()
+    const anoAtual = hoje.getFullYear()
+
+    if (ano < 1900 || ano > anoAtual) {
+        window.alert('[ERRO] Verifique os dados e tente novamente!')
+        return
     }
 
     // Cálculo correto da idade
@@ -60,23 +35,40 @@ function verificar() {
         idade--
     }
 
+    // Definição do gênero 
+    const genero = fsex.value === 'Masculino' ? 'Homem' : 'Mulher'
+    
+    //Limpando o resultado antes de adicionar novo conteúdo
+    resultado.innerHTML = ''
     resultado.style.textAlign = 'center'
+
+    // Criação da imagem
+    const img = document.createElement('img')
+    img.setAttribute('id', 'foto')
 
     // Se for bebê (menos de 1 ano)
     if (idade === 0) {
         let meses = hoje.getMonth() - nascimento.getMonth()
+        if (meses < 0) meses += 12
 
-        if (meses < 0) {
-            meses += 12
-            // Bebe
+            img.setAttribute('src', genero === 'Homem' ? './imagens/bebe-m.png' : './imagens/bebe-f.png')
+
+        resultado.innerHTML = `Detectamos ${genero} com ${meses} ${meses === 1 ? 'mês' : 'meses'}`
+    } 
+
+    // Criança / Adolescente / Adulto / Idoso
+    else {
+        if (idade < 12) {
+            img.setAttribute('src', genero === 'Homem' ? './imagens/crianca-m.png' : './imagens/crianca-f.png')
+        } else if (idade < 18) {
+            img.setAttribute('src', genero === 'Homem' ? './imagens/adolescente-m.png' : './imagens/adolescente-f.png')
+        } else if (idade < 60) {
+            img.setAttribute('src', genero === 'Homem' ? './imagens/adulto-m.png' : './imagens/adulto-f.png')
+        } else {
+            img.setAttribute('src', genero === 'Homem' ? './imagens/idoso-m.png' : './imagens/idoso-f.png')
         }
-
-        resultado.innerHTML = `Detectamos ${gênero} com ${meses} ${meses === 1 ? 'mês' : 'meses'}`
-    } else {
-    resultado.innerHTML = `Detectamos ${gênero} com ${idade} anos.`
+        resultado.innerHTML = `Detectamos ${genero} com ${idade} anos.`
     }
 
-    let img = document.createElement('img')
-    img.setAttribute('id', 'foto')
-
+    resultado.appendChild(img)
 }
