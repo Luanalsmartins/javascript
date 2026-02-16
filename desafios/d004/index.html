@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando o Troco</title>
+    <style>
+        body {
+            font: normal 1em arial;
+        }
+        input {
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <input type="button" value="Comprar produto" onclick="comprar()">
+
+    <script>
+        function comprar() {
+            let produto = window.prompt('Que produto você está comprando?')
+            let custaInput = (window.prompt(`Quanto custa o(a) ${produto} que você está comprando?`))
+            let valorInput = (window.prompt(`Qual foi o valor que você deu para pagar o(a) ${produto}?`))
+
+            let custa = parseFloat(custaInput.replace(',', '.'))
+            let valor = parseFloat(valorInput.replace(',', '.'))
+            let troco = valor - custa
+
+            if (troco < 0) {
+                alert('[ERRO] Você deve dar um valor igual ou maior que o valor do produto!')
+            } else {
+                let custaFormatado = custa.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+                let valorFormatado = valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+                let trocoFormatado = troco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+                alert(`Você comprou um(a) ${produto} que custou ${custaFormatado}.\nDeu ${valorFormatado} em dinheiro e vai receber ${trocoFormatado} de troco.\nVolte sempre!`)
+            }            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <style>
+        body {
+            font: normal 1em arial;
+        }
+        input {
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+
+    <input type="button" value="Converter" onclick="iniciar()">
+
+    <div id="resultado">
+        <p>Clique no botão para inciar.</p>
+    </div>
+
+    <script>
+        function iniciar() {
+            let entrada = (window.prompt('Digite uma distância em metros (m)'))
+            let metros = Number(entrada.replace(',', '.'))
+            let resultado = document.getElementById('resultado')
+
+            function formatar(valor) {
+                return valor.toLocaleString('pt-BR', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 3
+                })
+            }
+
+        /*  Km = metros/1000
+            Hm = metros/100
+            Dam = metros/10
+            dm = metros*10
+            cm = metros*100
+            mm = metros*1000
+        */    
+
+            resultado.innerHTML = `
+            <h1>A distância de ${entrada} metros, corresponde a...</h1>
+            <p>${formatar(metros/1000)} quilômetros (Km)</p>
+            <p>${formatar(metros/100)} hectômetros (Hm)</p> 
+            <p>${formatar(metros/10)} decâmetros (Dam)</p>
+            <p>${formatar(metros*10)} decímetros (dm)</p>
+            <p>${formatar(metros*100)} centímetros (cm)</p>
+            <p>${formatar(metros*1000)} milímetros (mm)</p>
+            `
+
+        }
+    </script>
+</body>
+</html>
