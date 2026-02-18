@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Mudou</title>
+    <style>
+        body {
+            font: normal 1em arial;
+        }
+        input {
+            font-size: 1.5em;
+            height: 100px;
+            padding: 20px;
+        }
+        input:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço Mudou</h1>
+
+    <input type="button" value="Verificar" onclick="iniciar()">
+
+    <div id="resultado">
+        <p>Clique no botão acima para analisar a mudança de preço.</p>
+    </div>
+
+    <script>
+        function iniciar() {
+            let preçoAnterior = window.prompt('Qual era o preço anterior do produto?')
+            let preçoAtual = window.prompt(`Qual é o preço atual do produto?`)
+            let resultado = document.getElementById('resultado')
+
+            let NumPreçoAnterior = Number(preçoAnterior.replace(',', '.'))
+            let NumPreçoAtual = Number(preçoAtual.replace(',', '.'))
+            let PAnteriorFormatado = NumPreçoAnterior.toLocaleString ('pt-BR', {style: 'currency', currency: 'BRL'})
+            let PAtualFormatado = NumPreçoAtual.toLocaleString ('pt-BR', {style: 'currency', currency: 'BRL'})
+
+            resultado.innerHTML = `<h1>Analisando os valores informados</h1>
+            <p>O produto custava ${PAnteriorFormatado} e agora custa ${PAtualFormatado}</p>`
+
+            if (NumPreçoAtual > NumPreçoAnterior) {
+                let maisCaro = NumPreçoAtual - NumPreçoAnterior
+                let porcentagemCaro = (maisCaro * 100) / NumPreçoAnterior
+
+                resultado.innerHTML += `<p>Hoje o produto está mais caro.</p>
+                <p>O preço subiu ${maisCaro.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} em relação ao preço anterior.</p>
+                <p>Uma variação de ${porcentagemCaro.toLocaleString('pt-BR', {maximumFractionDigits: 2})}% para cima.</p>`
+            } else if (NumPreçoAtual < NumPreçoAnterior) {
+                let maisBarato = NumPreçoAnterior - NumPreçoAtual
+                let porcentagemBarato = (maisBarato * 100) / NumPreçoAnterior
+
+                resultado.innerHTML += `<p>Hoje o produto está mais barato.</p>
+                <p>O preço caiu ${maisBarato.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} em relação ao preço anterior.</p>
+                <p>Uma variação de ${porcentagemBarato.toLocaleString('pt-BR', {maximumFractionDigits: 2})}% para baixo.</p>`
+            } else {
+                resultado.innerHTML = `<p>O preço do produto não mudou!</p>`
+            }
+        }
+    </script>
+</body>
+</html>

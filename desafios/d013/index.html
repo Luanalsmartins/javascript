@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+    <style>
+        body {
+            font: normal 1em arial;
+        }
+        input {
+            font-size: 1.5em;
+            height: 100px;
+            padding: 20px;
+        }
+        input:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+
+    <input type="button" value="Entrar com as notas" onclick="iniciar()">
+
+    <div id="resultado">
+        <p>Clique no botão acima para informar as notas do aluno.</p>
+    </div>
+
+    <script>
+        function iniciar() {
+            let aluno = window.prompt(`Qual é o nome do aluno(a)?`)
+            let primeiraNota = window.prompt(`Primeira nota de ${aluno}:`)
+            let segundaNota = window.prompt(`Segunda nota de ${aluno}:`)
+            let resultado = document.getElementById('resultado')
+
+            let NumPrimeiraNota = Number(primeiraNota.replace(',', '.'))
+            let NumSegundaNota = Number(segundaNota.replace(',', '.'))
+            let calculoMedia = (NumPrimeiraNota + NumSegundaNota) / 2
+
+            resultado.innerHTML = `<h1>Analisando a situação de ${aluno}</h1>
+            <p>Com as notas ${primeiraNota} e ${segundaNota} a média é ${calculoMedia.toLocaleString('pt-BR', {minimumFractionDigits: 1, maximumFractionDigits: 2})}</p>`
+
+            if (calculoMedia < 3) {
+                resultado.innerHTML += `<p>Com média abaixo de 3,0 o aluno está <strong><mark style="background-color: #ff6666;">REPROVADO</mark></strong></p>`
+            } else if (calculoMedia <= 6) {
+                resultado.innerHTML += `<p>Com média entre 3,0 e 6,0 o aluno está em <strong><mark style="background-color: #ffff99;">RECUPERAÇÃO</mark></strong></p>`
+            } else {
+                resultado.innerHTML += `<p>Com média acima de 6,0 o aluno está <strong><mark style="background-color: #b3ff66;">APROVADO</mark></strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
