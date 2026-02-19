@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -27,10 +29,10 @@ section {
     width: 90%;
 }
 
-#valoradicionado {
+#todosvalores {
     margin: 10px 0px;
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
 }
 
 footer {
