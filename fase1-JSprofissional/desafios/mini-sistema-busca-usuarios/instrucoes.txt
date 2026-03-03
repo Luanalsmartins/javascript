@@ -1,0 +1,32 @@
+------ DESAFIO - MINI SISTEMA DE BUSCA DE USUÁRIOS ------
+
+Vamos usar essa API: https://jsonplaceholder.typicode.com/users
+
+Para: 
+1️ Buscar os usuários da API
+2️ Mostrar TODOS os nomes na tela
+3️ Criar um input de busca
+4️ Conforme a pessoa digitar, filtrar os nomes em tempo real
+5️ Ordenar os resultados em ordem alfabética
+
+----------------- Regras do desafio -----------------
+
+Quando a página carregar:
+- Buscar usuários
+- Salvar em uma variável
+- Mostrar todos inicialmente
+
+Quando digitar no input:
+- Filtrar nomes que incluam o texto digitado
+- Ignorar maiúscula/minúscula
+- Ordenar alfabeticamente
+- Atualizar a lista na tela
+
+Conceitos que você vai usar: 
+- fetch
+- filter
+- map
+- sort
+- toLowerCase
+- addEventListener
+- manipulação de DOM

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando API</title>
+</head>
+<body>
+    <h1>Testando API</h1>
+    
+    <script>
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json())
+        .then(data => {
+
+            const nomesComC = data 
+            .filter(usuario => usuario.name.startsWith("C"))
+            .map(usuario => usuario.name)
+            .sort((a, b) => a.localeCompare(b))
+            .slice(-3)
+
+            console.log(nomesComC)
+
+        })
+        .catch(error => {
+            console.log("Erro: ", error)
+        })
+    </script>
+</body>
+</html>
+
