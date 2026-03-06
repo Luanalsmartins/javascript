@@ -20,11 +20,13 @@
                 return response.json()
             })
             .then(data => {
+                data.sort((a, b) => a.name.localeCompare(b.name))
                 data.forEach(nome => {
                     lista.innerHTML += `<li>${nome.name}</li>`
-                    console.log(nome.name)
                 })
             })
+
+        
     </script>
 </body>
 </html>

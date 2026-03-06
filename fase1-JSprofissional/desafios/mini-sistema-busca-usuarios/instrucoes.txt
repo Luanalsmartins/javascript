@@ -1,4 +1,4 @@
------- DESAFIO - MINI SISTEMA DE BUSCA DE USUÁRIOS ------
+----- DESAFIO - MINI SISTEMA DE BUSCA DE USUÁRIOS -----
 
 Vamos usar essa API: https://jsonplaceholder.typicode.com/users
 
