@@ -3,11 +3,11 @@
 Vamos usar essa API: https://jsonplaceholder.typicode.com/users
 
 Para: 
-1️ Buscar os usuários da API
-2️ Mostrar TODOS os nomes na tela
+1️ Buscar os usuários da API - ok
+2️ Mostrar TODOS os nomes na tela - ok
 3️ Criar um input de busca
 4️ Conforme a pessoa digitar, filtrar os nomes em tempo real
-5️ Ordenar os resultados em ordem alfabética
+5️ Ordenar os resultados em ordem alfabética - ok
 
 ----------------- Regras do desafio -----------------
 
