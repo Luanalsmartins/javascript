@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titulo">Olá</h1>
+    <button id="botao">Mudar texto</button>
+
+    <script>
+        let botao = document.querySelector("button")
+        botao.onclick = function() {
+            let titulo = document.getElementById("titulo")
+            titulo.innerText = "Você clicou"
+            titulo.style.color = "blue"
+            let novoParagrafo = document.createElement("p")
+            novoParagrafo.innerText = "Novo parágrafo"
+            document.body.appendChild(novoParagrafo)
+        }
+    </script>
+</body>
+</html>
