@@ -5,16 +5,16 @@ Vamos usar essa API: https://jsonplaceholder.typicode.com/users
 Para: 
 1️ Buscar os usuários da API - ok
 2️ Mostrar TODOS os nomes na tela - ok
-3️ Criar um input de busca
-4️ Conforme a pessoa digitar, filtrar os nomes em tempo real
+3️ Criar um input de busca - ok
+4️ Conforme a pessoa digitar, filtrar os nomes em tempo real - ok
 5️ Ordenar os resultados em ordem alfabética - ok
 
 ----------------- Regras do desafio -----------------
 
 Quando a página carregar:
-- Buscar usuários
-- Salvar em uma variável
-- Mostrar todos inicialmente
+- Buscar usuários - ok
+- Salvar em uma variável - ok
+- Mostrar todos inicialmente - ok 
 
 Quando digitar no input:
 - Filtrar nomes que incluam o texto digitado

@@ -30,13 +30,16 @@
             busca.addEventListener('input', function(e) {
                 const letra = e.target.value.toLowerCase()
 
-                Array.from(itens).forEach(funciton(item) {
+                Array.from(itens).forEach(function(item) {
+                    const nome = item.textContent
+
                     if (nome.toLowerCase().indexOf(letra) != -1) {
-                        item.style.display = 'block'
+                        item.style.display = 'list-item'
                     } else {
                         item.style.display = 'none'
                     }
                 })
+            
             })
     </script>
 </body>
