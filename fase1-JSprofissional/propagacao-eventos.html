@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+    <style>
+        button {
+            margin: 50px;
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pai">
+        <button id="filho">Clique</button>
+    </div>
+
+    <script>
+        const pai = document.querySelector("#pai")
+        const filho = document.querySelector("#filho")
+
+        pai.addEventListener("click", () => {
+            console.log("pai")
+        })
+        filho.addEventListener("click", () => {
+            console.log("filho")
+        })
+    </script>
+</body>
+</html>

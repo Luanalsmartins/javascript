@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício fixação eventos</title>
+    <style>
+        button, input {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <button id="botao">Clique aqui</button><br>
+        <input type="text" id="texto" placeholder="Digite algo aqui e abra o console para ver o que digitou!">
+    </form>
+
+    <script>
+        const formulario = document.getElementById("formulario")
+        const botao = document.getElementById("botao")
+        const texto = document.getElementById("texto")
+
+
+        formulario.addEventListener('submit', function(event){
+            event.preventDefault()
+            console.log("Agora quando apertar o botão não recarrega a página")
+        })
+        botao.addEventListener('click', function(){
+            alert("Você clicou no botão!") 
+        })
+        texto.addEventListener('input', function(){
+            console.log(texto.value)
+        })
+
+    </script>
+</body>
+</html>
