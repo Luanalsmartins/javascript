@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixando classList</title>
+    <style>
+        #quadrado {
+            height: 200px;
+            width: 200px;
+            margin: 20px;
+        }
+        .red {
+            background-color: red;
+        }
+        .blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button id="botao">Clique aqui</button>
+    <div id="quadrado" class="red"></div>
+
+    <script>
+        const botao = document.getElementById("botao")
+        const quadrado = document.getElementById("quadrado")
+
+        botao.addEventListener("click", function(){
+            quadrado.classList.toggle("blue")
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList toggle e contains</title>
+    <style>
+        body {
+            font: 1.5em arial;
+        }
+        .dark {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="botao">Modo escuro</button>
+
+    <div id="caixa">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci repudiandae nulla incidunt unde, ipsa amet error magni vero eum voluptates corporis consequuntur. Nulla illum soluta saepe amet ad eius qui. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem accusamus laborum ad tempora, id voluptatum cumque provident architecto porro at sint nesciunt? Numquam optio magni accusantium consequatur consectetur voluptate?</p>
+    </div>
+
+    <script>
+        const botao = document.getElementById("botao")
+        const caixa = document.getElementById("caixa")
+
+        botao.addEventListener("click", function(){
+            caixa.classList.toggle("dark")
+
+            if (caixa.classList.contains("dark")) {
+                console.log("Modo escuro está ativo")
+            }
+        })
+    </script>
+</body>
+</html>
