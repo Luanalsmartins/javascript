@@ -41,15 +41,17 @@ button {
 }
 
 button:hover {
-    background-color: #74bdc7;
+    background-color: #386b72;
+    color: white;
     font-weight: bold;
 }
 
 li {
     background-color: azure;
     border-radius: 8px;
-    padding: 5px;
+    padding: 8px;
     margin: 5px;
+    list-style-type: none;
 }
 
 li:hover {
@@ -57,7 +59,24 @@ li:hover {
     cursor: pointer;
 }
 
+.deletar {
+    margin-left: 8px;
+}
+
+.deletar::before {
+    content:"\274C";
+    font-size: .8em;
+}
+
 .concluida {
     text-decoration: line-through;
     color: gray;
+}
+
+#contador {
+    background-color: #386b72;
+    color: white;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 8px;
 }
